@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>404 - Not Found</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --teal-900: #0b3a36;
+      --teal-700: #0f766e;
+      --teal-600: #138a80;
+      --teal-50: #ecfdf9;
+      --ink: #0f1a1e;
+      --muted: #6b7c81;
+      --line: #e3eaea;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1000px 480px at 80% -10%, var(--teal-50), transparent 60%),
+        linear-gradient(180deg, #fff, #f4f8f7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      text-align: center;
+      max-width: 480px;
+      width: 100%;
+    }
+    .logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(15, 26, 30, .12);
+      margin-bottom: 24px;
+    }
+    .code {
+      font-size: clamp(4.5rem, 16vw, 7rem);
+      font-weight: 800;
+      letter-spacing: -.04em;
+      line-height: 1;
+      color: var(--teal-700);
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 1.4rem;
+      margin: 12px 0 6px;
+    }
+    p {
+      color: var(--muted);
+      font-size: 1.02rem;
+      margin: 0 auto 28px;
+      max-width: 360px;
+      line-height: 1.6;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 13px 26px;
+      border-radius: 999px;
+      background: var(--teal-700);
+      color: #fff;
+      text-decoration: none;
+      box-shadow: 0 1px 3px rgba(15, 26, 30, .08);
+      transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+    }
+    .btn:hover {
+      background: var(--teal-600);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(15, 26, 30, .12);
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <p class="code">404</p>
+    <h1>Page not found</h1>
+    <p>The page you are looking for doesn't exist or has been moved.</p>
+    <a class="btn" href="/">Back to home</a>
+  </main>
+</body>
+</html>
