@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  /* ============ Config ============ */
+
   var DESCRIPTIONS = {
     en: "core/app_description_en.md",
     my: "core/app_description_my.md"
@@ -10,7 +10,7 @@
   var DEFAULT_LANG = "en";
   var cache = {};
 
-  /* ============ Helpers ============ */
+
   function $(sel) { return document.querySelector(sel); }
   function $all(sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); }
 
@@ -21,14 +21,7 @@
       .replace(/>/g, "&gt;");
   }
 
-  /* ============ Markdown-ish renderer ============
-     Turns the plain-text description files into structured HTML:
-     - first text block        -> intro paragraph
-     - lines that introduce a   -> <h3> heading
-       bullet group / ALL CAPS
-     - lines starting with •    -> <ul><li>
-     - "Note:" line             -> small note paragraph
-  */
+
   function renderDescription(text) {
     var lines = text
       .replace(/\r/g, "")
@@ -39,7 +32,7 @@
       for (var j = i + 1; j < lines.length; j++) {
         var t = lines[j].trim();
         if (t === "") continue;
-        return t.indexOf("\u2022") === 0; // bullet •
+        return t.indexOf("\u2022") === 0; 
       }
       return false;
     }
@@ -86,7 +79,6 @@
     return html;
   }
 
-  /* ============ Description loading + toggle ============ */
   function setActiveButton(lang) {
     $all(".lang-toggle__btn").forEach(function (btn) {
       var active = btn.getAttribute("data-lang") === lang;
@@ -145,7 +137,7 @@
     loadDescription(lang);
   }
 
-  /* ============ Mobile nav ============ */
+
   function initNav() {
     var btn = $("#menuBtn");
     var links = $(".nav__links");
@@ -164,7 +156,6 @@
     });
   }
 
-  /* ============ Lightbox ============ */
   function initLightbox() {
     var lightbox = $("#lightbox");
     var lightboxImg = $("#lightboxImg");
@@ -202,13 +193,11 @@
     });
   }
 
-  /* ============ Misc ============ */
   function initYear() {
     var el = $("#year");
     if (el) el.textContent = new Date().getFullYear();
   }
 
-  /* ============ Boot ============ */
   document.addEventListener("DOMContentLoaded", function () {
     initLanguage();
     initNav();
